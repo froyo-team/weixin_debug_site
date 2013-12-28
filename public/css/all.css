@@ -1,0 +1,141 @@
+footer {
+            display: block;
+            position: fixed;
+            left: 0;
+            padding: 0.2%;
+            bottom: 0;
+            right: 0;
+           
+            background-color: #333;
+            overflow: hidden;
+            z-index:1000;
+            -webkit-transform: translateZ(0);
+            opacity:.9;
+        }
+
+    header{
+        display:block;
+        position: fixed;
+        left:0;
+        right:0;
+        top:0;
+        height:50px;
+        overflow: hidden;
+    }
+
+    section{
+        display:block;
+        position:fixed;
+        left:0;
+        top:50px;
+        bottom:106px;
+        right:0;
+        overflow-y: auto;
+    }
+
+    nav{
+        display:block;
+        height:90%;
+        -webkit-backface-visibility: hidden;
+    }
+
+    .body{
+        overflow-y: hidden;
+    }
+    .bar {
+        border: 1px solid       #2A2A2A;
+        background:             #111111;
+        color:                  #ffffff;
+        font-weight: bold;
+        text-shadow: 0 -1px 1px #000000;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#3c3c3c), to(#111)); /* Saf4+, Chrome */
+        background-image: -webkit-linear-gradient(top, #3c3c3c, #111); /* Chrome 10+, Saf5.1+ */
+        background-image:    -moz-linear-gradient(top, #3c3c3c, #111); /* FF3.6 */
+        background-image:     -ms-linear-gradient(top, #3c3c3c, #111); /* IE10 */
+        background-image:      -o-linear-gradient(top, #3c3c3c, #111); /* Opera 11.10+ */
+        background-image:         linear-gradient(top, #3c3c3c, #111);
+  }
+
+  .chart-item{
+      width:98%;
+      margin:5px 10px 5px 10px;
+      padding:5px;
+
+  }
+  .msg-box{
+      clear:both;
+      padding: 10px;
+
+  }
+  .you{
+    float:left;
+    max-width: 40%;
+    padding: 10px;
+    border-color: transparent;
+    border: 1px solid #7AA23F;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 0px 1px 0px #DBDBDB;
+    -webkit-border-radius: 5px;
+    box-shadow: 0px 1px 0px #DBDBDB;
+    border: 1px solid #73972a\9;
+    border-radius: 6px\9;
+    background-color: #B2CF73;
+    background: -webkit-gradient(linear, left top,left bottom, from(#C4DE94),to(#A4C363), color-stop(0.1,#B4D174),color-stop(0.2,#B2CF73), color-stop(0.3,#B2CF73), color-stop(0.4,#B2CF73), color-stop(0.5,#B2CF73),color-stop(0.6,#AFCC74), color-stop(0.7,#ABCA6C),color-stop(0.8,#AECA72), color-stop(0.9,#A9C572),color-stop(1.0,#A4C363));
+  }
+
+    .my{
+    float:right;
+    max-width: 40%;
+    padding: 10px;
+    border-top: 1px solid #FFF;
+    border-bottom: 1px solid #F2F2F2;
+    padding: 13px\9;
+    border-radius: 13px\9;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    overflow: hidden;
+    color: #000;
+    text-shadow: none;
+    background-color: #ECECEC;
+    background: -webkit-gradient(linear, left top,left bottom, from(#F4F4F4),to(#E5E5E5), color-stop(0.1,#F3F3F3),color-stop(0.3,#F1F1F1),color-stop(0.5,#ECECEC),color-stop(0.7,#E9E9E9),color-stop(0.9,#E6E6E6),color-stop(1.0,#E5E5E5));
+  }
+  .new-info{
+    max-width:450px;
+    min-width:300px;
+    margin: 10px;
+    padding: 10px;
+    border-top: 1px solid #FFF;
+    border-bottom: 1px solid #F2F2F2;
+    padding: 13px\9;
+    border-radius: 13px\9;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    overflow: hidden;
+    color: #000;
+    text-shadow: none;
+    background-color: #ECECEC;
+    background: -webkit-gradient(linear, left top,left bottom, from(#F4F4F4),to(#E5E5E5), color-stop(0.1,#F3F3F3),color-stop(0.3,#F1F1F1),color-stop(0.5,#ECECEC),color-stop(0.7,#E9E9E9),color-stop(0.9,#E6E6E6),color-stop(1.0,#E5E5E5));
+  }
+  .news a{
+   color:#B2B2B2;
+   text-decoration: none;
+  }
+  .news a:visited {
+   color:#B2B2B2;
+   text-decoration: none;
+}
+.news a:hover {
+   color:#B2B2B2;
+   text-decoration: none;
+}
+  .news-item{
+
+    border-bottom: 1px solid #c2c2c2;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    min-height: 40px;
+  }
