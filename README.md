@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 weixin_api_debug_tool
 author:froyo
 欢迎提交新的功能
@@ -11,9 +10,3 @@ author:froyo
 
 返回text信息
 返回news信息
-=======
-weixin_debug_site
-=================
-
-weixin debug site
->>>>>>> 524d6952a268a25defa6775ee37f19f51c34e151
