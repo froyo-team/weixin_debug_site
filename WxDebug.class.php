@@ -16,16 +16,15 @@ class WxDebug{
 						      <MsgId>$msg_id</MsgId></xml>";
 }
 
-public function sendMsg($to_user, $from_user, $type, $content,$url,$port=80,
+public function sendMsg($token, $to_user, $from_user, $type, $content,$url,$port=80,
 											$event = '', $msg_id = '1234567890', $creat_time = null){
 		if ($creat_time == null){
 		 		$creat_time = time();
 		 }									
 		$data = $this->getFormatData($to_user, $from_user, $type, $content,
 																		$event , $msg_id, $creat_time = null);
-    $token = 'froyo';
     $timestamp = (string)time();
-    $nonce = (string)time();
+    $nonce = (string)rand();
     $tmpArr = array($token, $timestamp, $nonce);
     sort($tmpArr);
     $tmpStr = implode( $tmpArr );
@@ -40,12 +39,12 @@ public function sendMsg($to_user, $from_user, $type, $content,$url,$port=80,
 		return $result;
 }
 
-public function jsonReturnSendMsg($to_user, $from_user, $type, $content,$url,$port=80,
+public function jsonReturnSendMsg($token, $to_user, $from_user, $type, $content,$url,$port=80,
 											$event = '', $msg_id = '1234567890',$creat_time=NULL){
 	if ($creat_time == null){
 	 		$creat_time = time();
 	 }	
-	$result = $this->sendMsg($to_user, $from_user, $type, $content,$url,$port,
+	$result = $this->sendMsg($token,$to_user, $from_user, $type, $content,$url,$port,
 											$event , $msg_id, $creat_time = null);
 	if($result['status'] == 'ok'){
       $result['content'] = str_replace('<![CDATA[','',$result['content']);

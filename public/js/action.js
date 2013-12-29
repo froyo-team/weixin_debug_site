@@ -39,7 +39,8 @@ $(document).ready(function(){
     }
 
     function send_message_to(data,msg){
-           add_html('my',msg);
+        check_config();
+        add_html('my',msg);
        $.ajax({  
                   type: "POST",  
                   url: "wxdg.php",  
@@ -66,6 +67,7 @@ $(document).ready(function(){
     }
 
     $('#add_contect').click(function(){
+      check_config();
       $('#content_msg').val('');
       $('#event').val('subscribe');
 
@@ -82,6 +84,13 @@ $(document).ready(function(){
       }
       send_message_to(data,'发送关注信息');
     });
+
+    function check_config(){
+      if($('#url').val().length<7 || $('#token').val().length<2){
+        alert('配置信息不完整，点击左上角"三"按钮进行配置!');
+        return false;
+      }
+    }
   });
 
    

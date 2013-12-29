@@ -3,6 +3,7 @@ require_once 'WxDebug.class.php';
 if ('POST' == $_SERVER['REQUEST_METHOD']) {
     $wxDebug = new WxDebug();
     echo $wxDebug->jsonReturnSendMsg(
+                                $_POST['Token'],
                                 $_POST['ToUserName'],
                                 $_POST['FromUserName'],
                                 $_POST['MsgType'],
@@ -25,6 +26,7 @@ if ('POST' == $_SERVER['REQUEST_METHOD']) {
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css" />
         <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+        <script src="./public/js/html5db.js"></script>
         <script src="./public/js/action.js"></script>
         <link rel="stylesheet" href="./public/css/all.css" type="text/css" media="all">
 
@@ -52,11 +54,11 @@ if ('POST' == $_SERVER['REQUEST_METHOD']) {
           <footer class="bar" id="allFoot">
               <div data-role="footer" data-theme="b">
                 <div class="chartAction">
-                <a href="#" id="send_mage">图片</a>
-                <a href="#" id="send_video">视频</a>
-                <input type="text" name="Content" id="content_msg">
-                <a href="#" id="send">发送</a>
-
+         
+                <label>
+                    <input type="text" name="Content" id="content_msg" autocomplete="off" style="height:80px;vertical-align:top;">
+                    <a href="#" id="send" data-role="button">发送</a>
+                </label>
               </div>
           </footer>
         </div>
@@ -71,6 +73,10 @@ if ('POST' == $_SERVER['REQUEST_METHOD']) {
             <form name="wx_debug" id="wx_debug" method="POST">
             <div data-role="content">
                 <ul data-role="listview">
+                    <li>
+                        <label>Token:<label>
+                        <input name="Token" type="text" id="token" placeholder="token" value="">
+                    </li>
                     <li>
                         <label>URL:<label>
                         <input name="Host" type="url" id="url" placeholder="http://" value="">
