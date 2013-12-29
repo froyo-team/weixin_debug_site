@@ -42,7 +42,7 @@ $(document).ready(function(){
            add_html('my',msg);
        $.ajax({  
                   type: "POST",  
-                  url: "my.php",  
+                  url: "wxdg.php",  
                   cache: false,  
                   data: data,  
                   success: function(info){

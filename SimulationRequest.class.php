@@ -45,7 +45,9 @@ class SimulationRequest{
     $fp = @fsockopen($host, $this->port, $errno, $errstr, $this->limit_time);
     if ($fp) {
 			if($this->type == 'XML'){
-		      fputs($fp, "POST $path HTTP/1.1\r\n");
+					$request = $url["path"] . ($url["query"] != "" ? "?" . $url["query"] : "");
+
+		      fputs($fp, "POST $request HTTP/1.1\r\n");
 		      fputs($fp, "Host: $host\r\n");
 		      if ($referer != '')
 		          fputs($fp, "Referer: $referer\r\n");

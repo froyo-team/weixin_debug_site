@@ -23,6 +23,15 @@ public function sendMsg($to_user, $from_user, $type, $content,$url,$port=80,
 		 }									
 		$data = $this->getFormatData($to_user, $from_user, $type, $content,
 																		$event , $msg_id, $creat_time = null);
+    $token = 'froyo';
+    $timestamp = (string)time();
+    $nonce = (string)time();
+    $tmpArr = array($token, $timestamp, $nonce);
+    sort($tmpArr);
+    $tmpStr = implode( $tmpArr );
+    $signature = sha1( $tmpStr );
+
+    $url = rtrim($url,'/')."/?signature=$signature&timestamp=$timestamp&nonce=$nonce";
 		$simulation_request = new SimulationRequest();
 		$simulation_request->setType('XML');
 		$simulation_request->setUrl($url);
@@ -36,7 +45,7 @@ public function jsonReturnSendMsg($to_user, $from_user, $type, $content,$url,$po
 	if ($creat_time == null){
 	 		$creat_time = time();
 	 }	
-	$result = $this->sendMsg($to_user, $from_user, $type, $content,$url,$port=80,
+	$result = $this->sendMsg($to_user, $from_user, $type, $content,$url,$port,
 											$event , $msg_id, $creat_time = null);
 	if($result['status'] == 'ok'){
       $result['content'] = str_replace('<![CDATA[','',$result['content']);
